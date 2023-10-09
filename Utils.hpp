@@ -94,25 +94,7 @@ do {                                                                            
     SetConsoleColor(stderr, COLOR_WHITE);                                                                                 \
     __VA_ARGS__;                                                                                                    \
     return ERR_CODE;                                                                                                \
-} while(0);
-
-/**
- * @brief Finds max of x, y.
- */
-#define max(x, y)                                                                                                   \
-({                                                                                                                  \
-    __typeof__(x) _tx = x; __typeof__(y) _ty = y;                                                                   \
-    _tx > _ty ? _tx : _ty;                                                                                          \
-})
-
-/**
- * @brief Finds min of x, y.
- */
-#define min(x, y)                                                                                                   \
-({                                                                                                                  \
-    __typeof__(x) _tx = x; __typeof__(y) _ty = y;                                                                   \
-    _tx < _ty ? _tx : _ty;                                                                                          \
-})                                                                                                                  \
+} while(0);                                                                                                           \
 
 /**
  * @brief Struct to contain where some variable was created.
@@ -138,6 +120,14 @@ struct SourceCodePosition
  * @return false The numbers are not equal.
  */
 bool IsEqual(const double x1, const double x2);
+
+/**
+ * @brief swaps 2 elements a and b in memory.
+ * 
+ * @param [in] a, b - elements to swap.
+ * @param [in] size - size of the elements.
+*/
+void Swap(void* a, void* b, size_t size);
 
 /**
  * @brief Clears stdin.
